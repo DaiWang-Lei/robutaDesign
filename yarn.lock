@@ -1789,6 +1789,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/classnames@^2.3.1":
+  "integrity" "sha1-PCRnqg8ak/HwIeO5vPk4vV39wN0="
+  "resolved" "https://registry.nlark.com/@types/classnames/download/@types/classnames-2.3.1.tgz"
+  "version" "2.3.1"
+  dependencies:
+    "classnames" "*"
+
 "@types/eslint@^7.2.6":
   "integrity" "sha1-4MpyGbpd7UAgYq1vkm1JHrsp3VM="
   "resolved" "https://registry.nlark.com/@types/eslint/download/@types/eslint-7.2.13.tgz?cache=0&sync_timestamp=1622583210245&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Feslint%2Fdownload%2F%40types%2Feslint-7.2.13.tgz"
@@ -3508,6 +3515,11 @@
     "define-property" "^0.2.5"
     "isobject" "^3.0.0"
     "static-extend" "^0.1.1"
+
+"classnames@*", "classnames@^2.3.1":
+  "integrity" "sha1-38+jiR4wbsHa0QXQ6I9EF7hTXo4="
+  "resolved" "https://registry.nlark.com/classnames/download/classnames-2.3.1.tgz?cache=0&sync_timestamp=1618846966125&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fclassnames%2Fdownload%2Fclassnames-2.3.1.tgz"
+  "version" "2.3.1"
 
 "clean-css@^4.2.3":
   "integrity" "sha1-UHtd59l7SO5T2ErbAWD/YhY4D3g="
