@@ -4,8 +4,12 @@ function App() {
 
   return (
     <div className="App">
-      <Button>Hello BTN</Button>
-      <Button btnType={ButtonType.Link} href='https://www.baidu.com' >Hello baidu</Button>
+      <Button>Hello Primary</Button>
+      <Button btnType={ButtonType.Primary}>Hello Primary</Button>
+      <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>Hello Danger</Button>
+      <Button btnType={ButtonType.Default}>Hello Default</Button>
+      <Button btnType={ButtonType.Link} disabled href='https://www.baidu.com' >Hello baidu</Button>
+      <Button size={ButtonSize.Small}>Hello BTN</Button>
       <Button size={ButtonSize.Large} >Hello BTN</Button>
       <Button size={ButtonSize.Small} disabled>Hello BTN</Button>
 

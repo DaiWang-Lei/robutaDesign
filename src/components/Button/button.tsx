@@ -7,7 +7,7 @@ export enum ButtonSize {
 }
 
 export enum ButtonType {
-  Link = 'Link',
+  Link = 'link',
   Primary = 'primary',
   Default = 'default',
   Danger = 'danger'
@@ -20,19 +20,26 @@ interface IBaseButtonProps {
   disabled?: boolean;
   href?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const Button: React.FC<IBaseButtonProps> = (props) => {
+type NativeButtonProps = IBaseButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+type AnchorButtonProps = IBaseButtonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>
+// 将所有属性变为可选的Partial<>
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
+const Button: React.FC<ButtonProps> = (props) => {
 
   const {
     size,
     href,
     disabled,
     btnType,
-    children
+    children,
+    className,
+    ...restProps
   } = props;
 
-  const classes = classNames('btn',
+  const classes = classNames('btn',className,
     {
       [`btn-${size}`]: size,
       [`btn-${btnType}`]: btnType,
@@ -44,6 +51,7 @@ const Button: React.FC<IBaseButtonProps> = (props) => {
       <a
         href={href}
         className={classes}
+        {...restProps}
       >
         {children}
       </a>
@@ -53,6 +61,7 @@ const Button: React.FC<IBaseButtonProps> = (props) => {
       <button
         className={classes}
         disabled={disabled}
+        {...restProps}
       >
         {children}
       </button>
