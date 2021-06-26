@@ -6,13 +6,15 @@ export enum ButtonSize {
   Small = 'sm'
 }
 
-export enum ButtonType {
-  Link = 'link',
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger'
-}
+// 枚举写法
+// export enum ButtonType {
+//   Link = 'link',
+//   Primary = 'primary',
+//   Default = 'default',
+//   Danger = 'danger'
+// }
 
+export type ButtonType = 'link' | 'primary' | 'default' | 'danger'
 interface IBaseButtonProps {
   className?: string;
   size?: ButtonSize;
@@ -39,14 +41,14 @@ const Button: React.FC<ButtonProps> = (props) => {
     ...restProps
   } = props;
 
-  const classes = classNames('btn',className,
+  const classes = classNames('btn', className,
     {
       [`btn-${size}`]: size,
       [`btn-${btnType}`]: btnType,
-      'disabled': (btnType === ButtonType.Link) && disabled
+      'disabled': (btnType === 'link') && disabled
     }
   )
-  if (btnType === ButtonType.Link && href) {
+  if (btnType === 'link' && href) {
     return (
       <a
         href={href}
@@ -74,7 +76,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: ButtonType.Default,
+  btnType: 'default',
 }
 
 export default Button;

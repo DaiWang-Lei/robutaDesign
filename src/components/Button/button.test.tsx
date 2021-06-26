@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react'
-import Button, { ButtonProps, ButtonSize, ButtonType } from './button';
+import Button, { ButtonProps, ButtonSize } from './button';
 
 const defaultProps = {
   onClick: jest.fn()
@@ -9,7 +9,7 @@ const defaultProps = {
 // const 
 const testProps: ButtonProps = {
   size: ButtonSize.Large,
-  btnType: ButtonType.Danger,
+  btnType: 'danger',
   className: 'kllas'
 }
 
@@ -47,7 +47,7 @@ describe('test Button component', () => {
   })
   // 当类型为link时渲染一个a标签
   it('should render a  link when btnType equals link and href is provided', () => {
-    const wrapper = render(<Button btnType={ButtonType.Link} href='http://www.baidu.com'>A</Button>)
+    const wrapper = render(<Button btnType='link' href='http://www.baidu.com'>A</Button>)
     const element = wrapper.getByText('A') as HTMLButtonElement
     expect(element).toBeInTheDocument()
     expect(element.tagName).toEqual('A')
@@ -61,6 +61,5 @@ describe('test Button component', () => {
     expect(element.disabled).toBeTruthy()
     fireEvent.click(element)
     expect(disabledProps.onClick).not.toBeCalled()
-
   })
 })
