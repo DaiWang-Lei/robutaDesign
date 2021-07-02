@@ -1,6 +1,6 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, FunctionComponentElement, useState } from 'react';
 import classNames from 'classnames';
-
+import { MenuItemProps } from './menuItem'
 type MenuMode = 'horizontal' | 'vertical'
 type SelectCallback = (selectIndex: number) => void;
 export interface MenuProps {
@@ -30,7 +30,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const handleClick = (index: number) => {
     // 点击后变化active
     setActive(index);
-    
+
     onSelect && onSelect(index)
   }
   // 4.透传给子组件的数据
@@ -39,6 +39,18 @@ const Menu: React.FC<MenuProps> = (props) => {
     onSelect: handleClick
   }
 
+  // 6.使用React.Children.map来避免直接使用children.map造成的问题
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement = child as FunctionComponentElement<MenuItemProps>
+      const { displayName } = childElement.type;
+      if (displayName === 'MenuItem') {
+        return React.cloneElement(childElement, { index });
+      } else {
+        console.error('Waring: Menu has a child  which is not MenuItem component')
+      }
+    })
+  }
   return (
     <ul
       className={classes}
@@ -46,7 +58,7 @@ const Menu: React.FC<MenuProps> = (props) => {
       data-testid='test-menu'
     >
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
 
     </ul>
