@@ -16,7 +16,6 @@ const testVerProps: MenuProps = {
   defaultIndex: '0',
   defaultOpenSubMenus: ['4'],
   onSelect: jest.fn()
-
 }
 
 // 用来渲染不同类型的组件
