@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Icon icon='arrow-down'  size='9x' />
+      <Icon icon='arrow-down'  theme='success' size='9x' />
       <header className="App-header">
         <Menu defaultIndex='0' onSelect={(index) => { alert(index) }} mode='vertical' defaultOpenSubMenus={['2']}>
           <MenuItem> 
