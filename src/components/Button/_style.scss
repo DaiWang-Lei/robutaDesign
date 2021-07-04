@@ -12,6 +12,7 @@
     @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
     box-shadow: $btn-box-shadow;
     cursor: pointer;
+    // transition动画重复，
     transition: $btn-transition;
     &.disabled,
     &[disabled] {

@@ -1,11 +1,11 @@
-import classNames from "classnames";
 import React from "react";
-export enum ButtonSize {
-  noraml = 'normal',
-  Large = 'lg',
-  Small = 'sm'
-}
-
+import classNames from "classnames";
+// export enum ButtonSize {
+//   noraml = 'normal',
+//   Large = 'lg',
+//   Small = 'sm'
+// }
+export type ButtonSize = 'normal'|'lg'|'sm'
 // 枚举写法
 // export enum ButtonType {
 //   Link = 'link',
