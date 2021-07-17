@@ -12242,7 +12242,7 @@ react-docgen-typescript@^2.0.0:
   resolved "https://registry.nlark.com/react-docgen-typescript/download/react-docgen-typescript-2.0.0.tgz?cache=0&sync_timestamp=1623309214818&other_urls=https%3A%2F%2Fregistry.nlark.com%2Freact-docgen-typescript%2Fdownload%2Freact-docgen-typescript-2.0.0.tgz#0f684350159ae4d2d556f8bc241a74669753944b"
   integrity sha1-D2hDUBWa5NLVVvi8JBp0ZpdTlEs=
 
-react-docgen@^5.0.0, react-docgen@^5.4.0:
+react-docgen@^5.0.0:
   version "5.4.0"
   resolved "https://registry.nlark.com/react-docgen/download/react-docgen-5.4.0.tgz#2cd7236720ec2769252ef0421f23250b39a153a1"
   integrity sha1-LNcjZyDsJ2klLvBCHyMlCzmhU6E=
