@@ -5,10 +5,11 @@ import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontaw
 export type theme = 'primary' | 'danger' | 'dark' | 'warning' | 'secondary' | 'success' | 'info' | 'light'
 
 export interface IconProps extends FontAwesomeIconProps {
+  /** 主题 */
   theme?: theme
 }
 
-const Icon: React.FC<IconProps> = (props) => {
+export const Icon: React.FC<IconProps> = (props) => {
   const { className, theme, ...restprops } = props;
 
   const classes = classNames('robuta-icon', className, {

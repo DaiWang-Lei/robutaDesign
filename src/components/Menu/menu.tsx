@@ -5,11 +5,17 @@ import { MenuItemProps } from './menuItem'
 type MenuMode = 'horizontal' | 'vertical'
 type SelectCallback = (selectIndex: string) => void;
 export interface MenuProps {
+  /** 默认active 的菜单项索引值 */
   defaultIndex?: string;
+  /** 自定义类名 */
   className?: string;
+  /** 菜单的展示形式 横向或者纵向 */
   mode?: MenuMode;
+  /** 设置 菜单 样式 */
   style?: React.CSSProperties;
+  /** 点击菜单触发的回调函数 */
   onSelect?: SelectCallback;
+  /** 设置子菜单的默认打开 只在纵向模式下生效 */
   defaultOpenSubMenus?: string[];
 }
 
@@ -23,8 +29,14 @@ interface IMenuContext {
 // 1.引入context，
 // 2.创建context
 // 要给MenuItem子组件用，创建一个context
-export const MenuContext = createContext<IMenuContext>({ index: '0' })
-const Menu: React.FC<MenuProps> = (props) => {
+export const MenuContext = createContext<IMenuContext>({ index: '0' });
+/** 给网页提供导航功能的菜单，支持横向和纵向两种模式，支持下拉菜单
+ * 
+ * ~~~js
+ * import { Button } from 'robutaDesiong'
+ * ~~~
+ */
+export const Menu: React.FC<MenuProps> = (props) => {
   const { defaultIndex, className, children, mode, style, onSelect, defaultOpenSubMenus } = props;
   // 3.指明现在的active是那个
   const [curActive, setActive] = useState(defaultIndex)

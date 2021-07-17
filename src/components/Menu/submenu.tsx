@@ -5,11 +5,14 @@ import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem'
 import Icon from '../Icon/icon';
 export interface SubMenuProps {
+  /** 设置subMenu的索引 */
   index?: string;
+  /** 设置subMenu的标题 */
   title?: string;
+  /** 设置subMenu的className */
   className?: string;
 }
-const SubMenu: React.FC<SubMenuProps> = (props) => {
+export const SubMenu: React.FC<SubMenuProps> = (props) => {
   const { index, title, children, className } = props;
   const context = useContext(MenuContext)
   const openSubMenus = context.defaultOpenSubMenus as Array<string>
