@@ -15,5 +15,5 @@ const defalutTransition = () => (
   </div>
 )
 
-storiesOf('Transition', module)
+storiesOf('Transition Component', module)
   .add('Transition动画', defalutTransition)

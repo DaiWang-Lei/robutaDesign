@@ -4,6 +4,11 @@ import Transition from '../Transition/transition';
 import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem'
 import Icon from '../Icon/icon';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 export interface SubMenuProps {
   /** 设置subMenu的索引 */
   index?: string;

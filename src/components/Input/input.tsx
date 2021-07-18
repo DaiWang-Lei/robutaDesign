@@ -1,11 +1,11 @@
-import React, { InputHTMLAttributes, ReactElement } from 'react';
+import React, { InputHTMLAttributes, ReactElement, ChangeEvent } from 'react';
 import classNames from 'classnames';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
 import { directive } from '@babel/types';
 
 // 使用Omit忽略掉和Input冲突的属性
-interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   /** 设置 Input 禁用 */
   disabled?: boolean;
   /** 设置 Input 大小，支持 lg 或者 sm */
@@ -18,6 +18,8 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
   append?: string | ReactElement;
   /** 设置 Input 自定义类名 */
   classname?: string;
+  /** */
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
@@ -40,12 +42,23 @@ export const Input: React.FC<InputProps> = (props) => {
       'input-group-prepend': !!prepend
     }
   )
-  debugger;
+  const fixControlledValue = (value: any) => {
+    if (typeof value === 'undefined' || value === null) {
+      return '';
+    }
+    return value;
+  }
+
+
+  if ('value' in props) {
+    delete restProps.defaultValue
+    restProps.value = fixControlledValue(props.value)
+  }
   return (
     <div className={classes} style={style}>
       {prepend && <div className="input-group-prepend">{prepend}</div>}
-      {icon && <div className='icon-wrapper'><Icon icon={icon} title={`title-${icon}`}/></div>}
-      <input type="text" className='input-inner' disabled={disabled} {...restProps}/>
+      {icon && <div className='icon-wrapper'><Icon icon={icon} title={`title-${icon}`} /></div>}
+      <input type="text" className='input-inner' disabled={disabled} {...restProps} />
       {append && <div className="input-group-append">{append}</div>}
     </div>
   )
