@@ -34,6 +34,11 @@
     }
 }
 
+@mixin alert-color($background, $color) {
+    color: $color;
+    background-color: $background;
+  }
+
 @mixin zoom-animation($direction: "top", $scaleStart: scaleY(0), $scaleEnd: scaleY(1), $origin: center top) {
     .zoom-in-#{$direction}-enter {
         opacity: 0;

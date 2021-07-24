@@ -1,0 +1,40 @@
+.alert {
+  display: block;
+  width: $alert-width;
+  @include alert-color($primary, $white);
+  border-radius: $alert-border-radius;
+  padding: $alert-padding-y $alert-padding-x;
+  border-width: $border-width;
+  position: relative;
+
+  h4.alert-title {
+    margin-bottom: 0;
+    font-size: $alert-title-font-size;
+    line-height: $alert-line-height;
+  }
+  p.alert-message {
+    margin-bottom: 0;
+    font-size: $alert-message-font-size;
+    line-height: $alert-line-height;
+  }
+
+  .alert-icon {
+    position: absolute;
+    right: $alert-icon-right;
+    top: $alert-icon-top;
+    cursor: pointer;
+    font-weight: $alert-icon-font-weight;
+    // font-size: $alert-icon-font-size;
+  }
+}
+
+.alert-success{
+  @include alert-color($success,$white)
+}
+.alert-danger{
+  @include alert-color($danger,$white)
+}
+.alert-warning{
+  @include alert-color($warning,$white)
+
+}
