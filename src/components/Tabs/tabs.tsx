@@ -15,7 +15,7 @@ export interface TabsProps {
 
 export const Tabs: FC<TabsProps> = (props) => {
   const { className, defaultIndex, onSelect, children, styleType } = props;
-  const classes = classNames('tabs', classNames, {
+  const classes = classNames('tabs-nav', classNames, {
     'tabs-underline': styleType === 'underline',
     'tabs-outline': styleType === 'outline'
   })

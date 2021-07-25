@@ -29,5 +29,6 @@ TabsItem.defaultProps = {
 }
 
 
+TabsItem.displayName = 'TabsItem'
 
 export default TabsItem;
