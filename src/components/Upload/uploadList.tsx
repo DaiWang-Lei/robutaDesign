@@ -12,13 +12,13 @@ export const UploadList: FC<UploadListProps> = (props) => {
   const { uploadFileList, onRemove } = props;
 
   return (
-    <ul>
+    <ul className='upload-list'>
       {uploadFileList.map(file => {
         return (
           <li className='upload-list-item' key={file.uid}>
-            <span>
+            <span className={`file-name file-name-${file.status}`}>
               <Icon icon='file-alt' theme='secondary' />
-              <p>{file.name}</p>
+              {file.name}
             </span>
             <span className='file-status'>
               {file.status === 'uploading' ?

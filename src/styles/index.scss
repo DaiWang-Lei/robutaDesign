@@ -1,35 +1,38 @@
 // configCSS
-@import 'variables';
+@import "variables";
 
 // layoutCSS
 @import "reboot";
 
 // mixinCSS
-@import 'mixin';
+@import "mixin";
 
 // animation
-@import 'animation';
+@import "animation";
 
 // ButtonCSS
-@import '../components/Button/style';
+@import "../components/Button/style";
 
 // Menu
-@import '../components/Menu/style';
+@import "../components/Menu/style";
 
 // Icon
-@import '../components/Icon/style';
+@import "../components/Icon/style";
 
 // 修改文档表格样式
-@import 'infoTable';
+@import "infoTable";
 
 // Input
-@import '../components/Input/style';
+@import "../components/Input/style";
 
-// autoComplete
-@import '../components/AutoComplete/style';
+// AutoComplete
+@import "../components/AutoComplete/style";
 
-//Alert
-@import '../components/Alert/style';
+// Alert
+@import "../components/Alert/style";
 
-//Tabs
-@import '../components/Tabs/style';
+// Tabs
+@import "../components/Tabs/style";
+
+//Upload
+@import "../components/Upload/style";
