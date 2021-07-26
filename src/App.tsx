@@ -1,68 +1,61 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import axios from 'axios';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import Button from './components/Button/button';
-import Menu from './components/Menu/menu';
-import MenuItem from './components/Menu/menuItem';
-import SubMenu from './components/Menu/submenu';
-// import Icon from './components/Icon/icon'
-import Transition from './components/Transition/transition';
+import { appendFile } from 'fs';
 library.add(fas)
 
 function App() {
-  const [show, setShow] = useState(false)
+  const [title, setTitle] = useState(false)
+  const postData = {
+    title: 'test Title',
+    body: 'hello SH'
+  }
+  useEffect(() => {
+    sendAjax()
+  })
+  const sendAjax = async () => {
+    // const { data: { title } } = await axios.get('http://jsonplaceholder.typicode.com/posts/1')
+
+    /** 自定义Header */
+    // const { data: { title } } = await axios.get('http://jsonplaceholder.typicode.com/posts/1', {
+    //   headers: {
+    //     'X-Reauested-With': 'XMLHttpRequest',
+    //   },
+    //   responseType: 'json'
+    // })
+
+    /**post */
+    const { data: { title } } = await axios.post('http://jsonplaceholder.typicode.com/posts', postData)
+
+    setTitle(title)
+  }
+
+  const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {
+    // console.log(e);
+    const files = e.target.files;
+    if (files) {
+      const uploadFile = files[0];
+      const formData = new FormData()
+      uploadFile.size/2014 < 100 && formData.append(uploadFile.name, uploadFile);
+      // debugger;
+      const res = await axios.post('http://jsonplaceholder.typicode.com/posts', formData, { headers: { 'Content-Type': 'multipart/form-data' } })
+      console.log(res);
+    }
+
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <Menu defaultIndex='0' onSelect={(index) => { alert(index) }} defaultOpenSubMenus={['2']}>
-          <MenuItem>
-            cool link
-          </MenuItem>
-          <MenuItem>
-            cool link1
-          </MenuItem>
-          <SubMenu title='dropdown'>
-            <MenuItem>
-              dropdown 1
-            </MenuItem>
-            <MenuItem>
-              dropdown 2
-            </MenuItem>
-          </SubMenu>
-          <MenuItem disabled>
-            cool link2
-          </MenuItem>
-        </Menu>
-        <Button btnType='primary' size='normal' onClick={() => { setShow(!show) }} >Toggle</Button>
-        <Transition
-          in={show}
-          timeout={300}
-          animation='zoom-in-right'
-        >
-          <div>
-            <p>
-              Edit <code>Hello World</code> and saved to reload.
-            </p>
-            <p>
-              Edit <code>Hello World</code> and saved to reload.
-            </p>
-            <p>
-              Edit <code>Hello World</code> and saved to reload.
-            </p>
-            <p>
-              Edit <code>Hello World</code> and saved to reload.
-            </p>
-          </div>
-        </Transition>
-        {/* btn没有transition动画 */}
-        <Transition
-          in={show}
-          timeout={300}
-          animation='zoom-in-right'>
-          <Button btnType='danger' size='lg' >large</Button>
-        </Transition>
+      {/* 基础的上传 */}
+      {/*
+      <form method='post' encType='mutipart/form-data' action="http://jsonplaceholder.typicode.com/posts">
+        <input type="file" name="myFile" />
+        <button type='submit'>提交</button>
+      </form> 
+      */}
 
-      </header>
+      <input type="file" name="myFile" onChange={handleChange} />
+
     </div>
   );
 }
