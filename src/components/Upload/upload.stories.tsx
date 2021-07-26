@@ -7,7 +7,6 @@ const defaultFileList: UploadFile[] = [
   { uid: '123', name: 'One punch Man', size: 3411, status: 'uploading', percent: 20 },
   { uid: '31', name: 'SayiTama', size: 1244, status: 'success', percent: 50 },
   { uid: '13', name: 'Narcotics', size: 3411, status: 'error', percent: 42 },
-
 ]
 
 const checkSize = (file: File) => {
