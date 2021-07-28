@@ -29,9 +29,8 @@
   box-sizing: border-box;
   border-radius: 4px;
   min-width: 200px;
-  display: flex;
-  justify-content: space-between;
   padding: 4px;
+  position: relative;
   &:first-child {
     margin-top: 10px;
   }
@@ -55,9 +54,21 @@
       color:$primary;
     }
   }
+  .file-status{
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    line-height: inherit;
+  }
+
   .file-actions{
     display: none;
     cursor: pointer;
+    position: absolute;
+    right: 7px;
+    line-height: inherit;
+    top: 2px;
   }
   &:hover{
     background-color: $gray-200;

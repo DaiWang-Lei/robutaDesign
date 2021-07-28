@@ -1,6 +1,9 @@
 import React, { ChangeEvent, FC, MouseEvent } from 'react';
 import { UploadFile } from './upload';
 import Icon from '../Icon/icon';
+import Progress from '../Progress/progress'
+
+
 export interface UploadListProps {
   /** 点击删除的回调 */
   onRemove: (file: UploadFile) => void;
@@ -29,7 +32,13 @@ export const UploadList: FC<UploadListProps> = (props) => {
             <span className='file-actions'>
               <Icon icon='trash-alt' onClick={() => { onRemove(file) }} />
             </span>
+            {
+              file.status==='uploading'&&<Progress percent={file.percent || 0} />
+            }
+            
+
           </li>
+          
         )
       })}
     </ul>
