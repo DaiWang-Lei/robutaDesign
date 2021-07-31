@@ -2,6 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Upload, { UploadFile, UploadProps } from './upload';
 import { action } from '@storybook/addon-actions';
+import Icon from '../Icon/icon';
+
 
 const defaultFileList: UploadFile[] = [
   { uid: '123', name: 'One punch Man', size: 3411, status: 'uploading', percent: 20 },
@@ -23,10 +25,17 @@ const filePromise = (file: File) => {
 }
 const defalutUpload = () => (
   <Upload
+    accept='.jpg'
+    multiple
     action='http://jsonplaceholder.typicode.com/posts'
     onChange={action('change')}
     defaultFileList={defaultFileList}
-  />
+    drag
+  >
+    <Icon icon='upload' size='5x' theme='secondary' />
+    <br />
+    <p>拖到此处上传</p>
+  </Upload>
 )
 storiesOf('Upload Component', module)
   .add('Upload', defalutUpload)

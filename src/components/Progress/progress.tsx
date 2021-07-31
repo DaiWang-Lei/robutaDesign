@@ -1,7 +1,7 @@
 import React, { CSSProperties, FC } from 'react';
 import classNames from 'classnames';
 import { theme } from '../Icon/icon'
-interface ProgressProps {
+export interface ProgressProps {
   /** 当前百分比 */
   percent: number;
   /** 自定义的CSS样式 */
@@ -16,7 +16,7 @@ interface ProgressProps {
   className?: string;
 }
 
-const Progress: FC<ProgressProps> = (props) => {
+export const Progress: FC<ProgressProps> = (props) => {
   const { percent, styles, showText, them, className, strokeHeight, ...restProps } = props;
   const classes = classNames('progress-bar', className)
   return (
