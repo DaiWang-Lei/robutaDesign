@@ -30,6 +30,7 @@ const defalutUpload = () => (
     action='http://jsonplaceholder.typicode.com/posts'
     onChange={action('change')}
     defaultFileList={defaultFileList}
+    onRemove={action('remove')}
     drag
   >
     <Icon icon='upload' size='5x' theme='secondary' />

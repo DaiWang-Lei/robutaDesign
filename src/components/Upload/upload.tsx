@@ -168,26 +168,31 @@ export const Upload: FC<UploadProps> = (props) => {
       updateFileList(_file, { status: 'error', error: err })
     })
   }
-  console.log(fileList);
+  // console.log(fileList);
   /** 点击删除触发的函数 */
   const handleRemove = (reomveFile: UploadFile) => {
-    return setFileList(prevList => {
+    setFileList(prevList => {
       return prevList.filter(file => file.uid !== reomveFile.uid)
     })
+    onRemove && onRemove(reomveFile)
   }
 
   return (
     <div className='upload-component'>
-      <div className='upload-input' onClick={handleClick}  style={{ display: 'inline-block' }} >
+      <div
+        className='upload-input'
+        style={{ display: 'inline-block' }} 
+        onClick={handleClick} 
+       >
         {drag ?
           <Dragger onFile={(files) => { uploadFiles(files) }}>
             {children}
           </Dragger>
           : children
         }
+        <input type="file" name="MyFile" multiple accept={accept} style={{ display: 'none' }} ref={fileInputRef} className='file-input' onChange={handleFileChange} />
       </div>
       {/* <Button btnType='primary' onClick={handleClick}>点击上传</Button> */}
-      <input type="file" name="MyFile" multiple accept={accept} style={{ display: 'none' }} ref={fileInputRef} className='file-input' onChange={handleFileChange} />
       <UploadList uploadFileList={fileList} onRemove={handleRemove} />
     </div>
   )
