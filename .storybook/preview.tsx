@@ -31,6 +31,14 @@ const StoryWrapper = (storyFn: any) => (
 addDecorator(StoryWrapper)
 
 
+const loaderFn = () => {
+  const allExports = [require('../src/welcome.stories.tsx')]
+  const req = require.context('../src/components', true, /\.stories\.tsx$/)
+  req.keys().forEach(file => allExports.push(req(file)))
+  return allExports
+}
+configure(loaderFn, module)
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
