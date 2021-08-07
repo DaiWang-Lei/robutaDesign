@@ -6,7 +6,7 @@ import AutoComplete, { AutoCompleteProps, dataSourceType } from "./autoComplete"
 // 所有的异步直接变成同步
 config.disabled = true;
 
-interface testProps {
+interface ItestProps {
   value: string;
   number: number;
 }
@@ -20,7 +20,7 @@ const testArray = [
 
 
 const testRenderOption = (item: dataSourceType) => {
-  const renderItem = item as dataSourceType<testProps>
+  const renderItem = item as dataSourceType<ItestProps>
   return (
     <div>
       <h3>value:{renderItem.value}</h3>

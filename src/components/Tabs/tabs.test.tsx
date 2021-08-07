@@ -1,7 +1,7 @@
 import React from "react";
 import { render, RenderResult, fireEvent } from "@testing-library/react";
 import Tabs, { TabsProps } from "./tabs";
-import TabsItem, { TabsItemProps } from "./tabsItem";
+import TabsItem from "./tabsItem";
 
 const testProps: TabsProps = {
   defaultIndex: 0,

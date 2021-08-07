@@ -2,7 +2,6 @@ import React, { InputHTMLAttributes, ReactElement, ChangeEvent } from 'react';
 import classNames from 'classnames';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import Icon from '../Icon/icon'
-import { directive } from '@babel/types';
 
 // 使用Omit忽略掉和Input冲突的属性
 export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {

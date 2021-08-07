@@ -1,16 +1,15 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useEffect } from 'react';
 import axios from 'axios';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
-import { appendFile } from 'fs';
 library.add(fas)
 
 function App() {
-  const [title, setTitle] = useState(false)
-  const postData = {
-    title: 'test Title',
-    body: 'hello SH'
-  }
+  // const [title, setTitle] = useState(false)
+  // const postData = {
+  //   title: 'test Title',
+  //   body: 'hello SH'
+  // }
   useEffect(() => {
     sendAjax()
   })
@@ -26,9 +25,9 @@ function App() {
     // })
 
     /**post */
-    const { data: { title } } = await axios.post('http://jsonplaceholder.typicode.com/posts', postData)
+    // const { data: { title } } = await axios.post('http://jsonplaceholder.typicode.com/posts', postData)
 
-    setTitle(title)
+    // setTitle(title)
   }
 
   const handleChange = async (e: ChangeEvent<HTMLInputElement>) => {

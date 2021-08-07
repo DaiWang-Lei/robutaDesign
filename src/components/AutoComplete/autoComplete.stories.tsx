@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import AutoComplete, { dataSourceType } from './autoComplete';
 
-interface PeopleProps {
-  value: string;
-  age: number;
-}
+// interface PeopleProps {
+//   value: string;
+//   age: number;
+// }
 
 interface GithubUserProps {
   login: string;
@@ -15,17 +15,17 @@ interface GithubUserProps {
 }
 
 const simpleAutoComplete = () => {
-  const humans = ['daiWang', 'Robuta', 'Lolita', 'xiXia', 'guXia', 'leiLei']
+  // const humans = ['daiWang', 'Robuta', 'Lolita', 'xiXia', 'guXia', 'leiLei']
 
-  const NameWithAge = [
-    { value: 'daiWang', age: 18 },
-    { value: 'Robuta', age: 21 },
-    { value: 'Lolita', age: 7 },
-    { value: 'xiXia', age: 16 },
-    { value: 'guXia', age: 27 },
-    { value: 'leiLei', age: 18 },
+  // const NameWithAge = [
+  //   { value: 'daiWang', age: 18 },
+  //   { value: 'Robuta', age: 21 },
+  //   { value: 'Lolita', age: 7 },
+  //   { value: 'xiXia', age: 16 },
+  //   { value: 'guXia', age: 27 },
+  //   { value: 'leiLei', age: 18 },
 
-  ]
+  // ]
   // 简单的AutoComplete
   // const handleFetch1 = (value: string) => {
   //   return humans.filter(item => item.includes(value)).map(name => ({ value: name }))

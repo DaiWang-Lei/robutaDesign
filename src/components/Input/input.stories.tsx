@@ -1,4 +1,4 @@
-import React, { ChangeEvent, InputHTMLAttributes, ReactHTMLElement, useState } from 'react';
+import { useState } from 'react';
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import Input from './input';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Upload, { UploadFile, UploadProps } from './upload';
+import Upload, { UploadFile } from './upload';
 import { action } from '@storybook/addon-actions';
 import Icon from '../Icon/icon';
 
@@ -11,18 +11,18 @@ const defaultFileList: UploadFile[] = [
   { uid: '13', name: 'Narcotics', size: 3411, status: 'error', percent: 42 },
 ]
 
-const checkSize = (file: File) => {
-  const currentFileSize = Math.round(file.size / 1024)
-  if (currentFileSize > 100) {
-    alert('文件太大了！请选择小于100k的文件')
-    return false;
-  }
-  return true
-}
-const filePromise = (file: File) => {
-  const newFile = new File([file], 'new_name.docx', { type: file.type })
-  return Promise.resolve(newFile)
-}
+// const checkSize = (file: File) => {
+//   const currentFileSize = Math.round(file.size / 1024)
+//   if (currentFileSize > 100) {
+//     alert('文件太大了！请选择小于100k的文件')
+//     return false;
+//   }
+//   return true
+// }
+// const filePromise = (file: File) => {
+//   const newFile = new File([file], 'new_name.docx', { type: file.type })
+//   return Promise.resolve(newFile)
+// }
 const defalutUpload = () => (
   <Upload
     accept='.jpg'

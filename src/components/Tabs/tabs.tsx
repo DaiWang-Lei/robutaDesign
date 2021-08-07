@@ -1,6 +1,6 @@
 import React, { Children, FC, useState } from 'react';
 import classNames from 'classnames';
-import TabsItem, { TabsItemProps } from './tabsItem';
+import { TabsItemProps } from './tabsItem';
 export interface TabsProps {
   /** 默认active的菜单项索引值 */
   defaultIndex?: number;
@@ -14,7 +14,7 @@ export interface TabsProps {
 }
 
 export const Tabs: FC<TabsProps> = (props) => {
-  const { className, defaultIndex, onSelect, children, styleType } = props;
+  const { className, onSelect, children, styleType } = props;
   const classes = classNames('tabs-nav', classNames, {
     'tabs-underline': styleType === 'underline',
     'tabs-outline': styleType === 'outline'
