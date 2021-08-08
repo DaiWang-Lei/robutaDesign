@@ -17,7 +17,23 @@ export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
   /** 自定义下拉模板 */
   renderOption?: (item: dataSourceType) => ReactElement;
 }
-
+/**
+ * ## AutoComplete 自动完成
+ * 输入框自动完成功能。
+ * 
+ * ### 何时使用
+ * - 需要一个输入框而不是选择器。
+ * - 需要输入建议/辅助提示。
+ * - 和 Select 的区别是：
+ * - AutoComplete 是一个带提示的文本输入框，用户可以自由输入，关键词是辅助输入。
+ * - Select 是在限定的可选项中进行选择，关键词是选择。
+ * 
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { AutoComplete } from 'robutadesign'
+ * ~~~
+ */
 export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
   const { fetchSuggestions, onSelect, renderOption, value, ...restProps } = props;
   const [inputValue, setInputValue] = useState('')

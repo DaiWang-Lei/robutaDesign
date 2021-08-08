@@ -30,10 +30,24 @@ interface IMenuContext {
 // 2.创建context
 // 要给MenuItem子组件用，创建一个context
 export const MenuContext = createContext<IMenuContext>({ index: '0' });
-/** 给网页提供导航功能的菜单，支持横向和纵向两种模式，支持下拉菜单
+/** 
+ * ## Menu导航菜单
+ * 
+ * 给网页提供导航功能的菜单，支持横向和纵向两种模式，支持下拉菜单
+ * ### 何时使用
+ *  
+ * - 导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。
+ *  
+ * - 更多布局和导航的使用可以参考。
+ * 
+ * ### 开发者注意事项
+ *  
+ *  - Menu 元素为 ul，因而仅支持 li 以及 script-supporting 子元素。因而你的子节点元素应该都在 Menu.Item 内使用。
+ *  
+ *  - Menu 需要计算节点结构，因而其子元素仅支持 Menu.* 以及对此进行封装的 HOC 组件。
  * 
  * ~~~js
- * import { Button } from 'robutaDesiong'
+ * import { Menu } from 'robutadesign'
  * ~~~
  */
 export const Menu: React.FC<MenuProps> = (props) => {

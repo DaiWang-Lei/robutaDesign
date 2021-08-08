@@ -23,7 +23,7 @@ const alertWithMessage = () => (
 
 
 storiesOf('Alert Component', module)
-  .add('默认Alert', defaultAlert)
+  .add('Alert', defaultAlert)
   .add('不同类型的Alert', alertWithType)
   .add('带message的Alert', alertWithMessage)
 

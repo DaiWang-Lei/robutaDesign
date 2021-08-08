@@ -6,4 +6,4 @@ const dogIcon = () => (
   <Icon icon='dog' theme='danger' />
 )
 storiesOf('Icon Component', module)
-  .add('Icon图标',dogIcon)
+  .add('Icon',dogIcon)

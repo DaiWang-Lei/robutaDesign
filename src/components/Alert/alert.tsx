@@ -17,7 +17,14 @@ export interface AlertProps {
   /** 警告的提示内容*/
   message?: string;
 }
-
+/**
+ * 页面中最常用的的提醒元素，适合于完成特定的提醒事件，点击右侧的❌关闭提醒
+ * ### 引用方法
+ *
+ * ~~~js
+ * import { Alert } from 'robutadesign'
+ * ~~~
+ */
 export const Alert: FC<AlertProps> = (props) => {
   const { title, className, type, closable, onClose, message, ...restProps } = props;
   const [visible, setVisible] = useState(true);

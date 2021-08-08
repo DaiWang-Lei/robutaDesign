@@ -12,7 +12,25 @@ export interface TabsProps {
   style?: React.CSSProperties;
   styleType?: 'underline' | 'outline'
 }
-
+/** 
+ * ## Tabs标签页
+ * 
+ * 选项卡切换组件。
+ * 
+ * ### 何时使用
+ *  
+ * 提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
+ * 
+ * 依次提供了三级选项卡，分别用于不同的场景。
+ *  
+ * - 卡片式的页签，提供可关闭的样式，常用于容器顶部。
+ * 
+ * - 既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。
+ * 
+ * ~~~js
+ * import { Tabs } from 'robutadesign'
+ * ~~~
+ */
 export const Tabs: FC<TabsProps> = (props) => {
   const { className, onSelect, children, styleType } = props;
   const classes = classNames('tabs-nav', classNames, {

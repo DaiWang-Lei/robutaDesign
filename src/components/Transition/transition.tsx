@@ -11,6 +11,17 @@ type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-i
  * 
  */
 type TransitonProps = CSSTransitionProps & { animation?: AnimationName; wrapper?: boolean }
+/** 
+ * ## Transition 切换
+ * 
+ * 切换动画组件
+ * 
+ * ### 何时使用
+ * - 需要某个元素一更加活泼的方式展示
+ * ~~~js
+ * import { Transition } from 'robutadesign'
+ * ~~~
+ */
 export const Transition: React.FC<TransitonProps> = (props) => {
   const { classNames, children, animation, wrapper, ...restProps } = props;
   return (

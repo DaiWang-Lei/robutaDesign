@@ -64,4 +64,4 @@ const simpleAutoComplete = () => {
   )
 }
 storiesOf('autoComplete component', module)
-  .add('autoCompletet', simpleAutoComplete)
+  .add('AutoComplete', simpleAutoComplete)

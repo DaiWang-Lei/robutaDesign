@@ -30,6 +30,6 @@ const strokeHeightWithProgress = () => (
 )
 
 storiesOf('Progress Comonent', module)
-  .add('progress', defaultProgress)
+  .add('Progress', defaultProgress)
   .add('主题及文字', progressWithThem)
   .add('不同的高度', strokeHeightWithProgress)

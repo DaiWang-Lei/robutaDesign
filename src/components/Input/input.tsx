@@ -21,11 +21,17 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
+
 /**
- * Input 输入框，通过鼠标或键盘输入内容，是最基础的表单域元素
+ * ## Input 输入框
+ * 通过鼠标或键盘输入内容，是最基础的表单域元素
+ * ### 何时使用
+ *  - 需要用户输入表单域内容时。
+ *  - 提供组合型输入框，还可以进行大小选择。
+ *  
  * ~~~js
  * //这样引用
- * inport { Input } from 'robutaDesign'
+ * inport { Input } from 'robutadesign'
  * ~~~
  * 支持所有的HTMLinput的基本属性
  *
